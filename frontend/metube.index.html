@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Metube (WIP)</title>
+
+	<!-- Load styling -->
+
+	<!-- Load logic -->
+	<!-- angular or third party scripts -->
+	<script src="/_libs_/angular/angular.js"></script><!-- load angular -->
+	<script src="/_libs_/angular-ui-router/release/angular-ui-router.js"></script><!-- load ui-router -->
+	<!-- metube scripts -->
+
+	<script src="/metube.module.js"></script>
+	<script src="/blog/blog.module.js"></script>
+	<script src="/blog/archive/archive.module.js"></script>
+	<script src="/blog/archive/archive.controller.js"></script>
+	<script src="/blog/view/view.module.js"></script>
+	<script src="/blog/view/view.controller.js"></script>
+	
+</head>
+<body ng-app="metube">
+	<div class="header">
+		<a ui-sref="blog.archive">(to archive)</a>
+		<a ui-sref="blog.view({blogId: 0})">(to newest post)</a>
+	</div>
+	<hr />
+	<div class="content">
+		<p>Hello World!</p>
+		<div ui-view></div>
+	</div>
+</body>
+</html>
