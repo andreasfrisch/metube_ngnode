@@ -1,0 +1,6 @@
+*.css
+*.css.map
+.sass-cache
+node_modules
+frontend/_libs_/
+frontend/coverage/

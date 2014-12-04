@@ -8,30 +8,31 @@
 	<title>Metube (WIP)</title>
 
 	<!-- Load styling -->
+	<link rel="stylesheet" href="metube.style.css">
+	<link rel="stylesheet" href="blog/menu.style.css">
+	<link rel="stylesheet" href="blog/view/view.style.css">
+	<link rel="stylesheet" href="blog/archive/archive.style.css">
 
 	<!-- Load logic -->
 	<!-- angular or third party scripts -->
-	<script src="/_libs_/angular/angular.js"></script><!-- load angular -->
-	<script src="/_libs_/angular-ui-router/release/angular-ui-router.js"></script><!-- load ui-router -->
-	<!-- metube scripts -->
+	<!-- bower:js -->
+	<script src="_libs_/angular/angular.js"></script>
+	<script src="_libs_/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="_libs_/angular-mocks/angular-mocks.js"></script>
+	<!-- endbower -->
 
+	<!-- metube scripts -->
 	<script src="/metube.module.js"></script>
 	<script src="/blog/blog.module.js"></script>
+	<script src="/blog/blogApi.service.js"></script>
 	<script src="/blog/archive/archive.module.js"></script>
 	<script src="/blog/archive/archive.controller.js"></script>
 	<script src="/blog/view/view.module.js"></script>
 	<script src="/blog/view/view.controller.js"></script>
-	
+	<script src="/blog/view/paragraph.directive.js"></script>
+		
 </head>
 <body ng-app="metube">
-	<div class="header">
-		<a ui-sref="blog.archive">(to archive)</a>
-		<a ui-sref="blog.view({blogId: 0})">(to newest post)</a>
-	</div>
-	<hr />
-	<div class="content">
-		<p>Hello World!</p>
-		<div ui-view></div>
-	</div>
+	<div ui-view></div>
 </body>
 </html>

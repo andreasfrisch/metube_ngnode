@@ -1,14 +1,32 @@
 {
-	"name" : "metube",
-	"version" : "0.0.1",
-	"description" : "Simple blog application",
-	"main" : "metube.server.js",
-	"author" : "Frisch",
-	"dependencies" : {
-		"express" : "~4.7.2",
-		"mongoose" : "~3.6.2",
-		"morgan" : "~1.2.2",
-		"body-parser" : "~1.5.2",
-		"method-override" : "~2.1.2"
-	}
+  "name": "metube",
+  "version": "0.0.1",
+  "description": "Simple blog application",
+  "main": "server.js",
+  "author": "Frisch",
+  "dependencies": {
+    "express": "~4.7.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.5.2",
+    "grunt": "^0.4.5",
+    "grunt-bower-install": "^1.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express": "^1.4.1",
+    "grunt-karma": "^0.9.0",
+    "grunt-open": "^0.2.3",
+    "jasmine-core": "^2.1.2",
+    "karma": "^0.12.25",
+    "karma-coverage": "^0.2.6",
+    "karma-jasmine": "^0.3.0",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0"
+  }
 }

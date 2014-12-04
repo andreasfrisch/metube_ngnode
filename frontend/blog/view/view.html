@@ -1,1 +1,31 @@
-This is the blog view (WIP)
+<div class="blogView">	
+	<div class="post">
+
+		<div class="title">
+			<div>
+				{{ post.title }}
+			</div>
+		</div>
+		<hr />
+		<div class="metaData">
+			<span class="postedDate">
+				{{ post.postedDate | date:'EEE d MMMM yyyy' }}
+			</span>
+			<div class="author">
+				<span class="ghost">By</span>
+				{{ post.author }}
+			</div>
+			<div class="tags">
+				<span class="ghost">In</span>
+				<a ui-sref="blog.archive({tags: tag})" ng-repeat="tag in post.tags">
+					<span class="tag" >{{ tag }}{{$last ? '' : ', '}}</span>
+				</a>
+			</div>
+		</div>
+		<hr />
+		<div class="content">
+			<blog-paragraph paragraph="paragraph" first="$first" ng-repeat="paragraph in post.paragraphs">
+			</blog-paragraph>
+		</div>
+	</div>
+</div>

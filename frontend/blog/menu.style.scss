@@ -1,0 +1,16 @@
+.blogMenu {
+	width: 800px;
+	margin: auto;
+	margin-bottom: 20px;
+	//background-color: #f8f8f8;
+	//border: 1px solid #ccc;
+	
+	.menuItem {
+		width: 100px;
+		padding: 5px;
+		border: 1px solid #ccc;
+		display: inline-block;
+		background-color: white;
+		text-align: center;
+	}
+}
