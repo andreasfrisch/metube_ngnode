@@ -112,6 +112,10 @@ module.exports = function(grunt) {
 			},
 		},
 	
+		//TODO:
+		//concat
+		//minify / uglify
+		//wiredep
 	
 	});
 	
