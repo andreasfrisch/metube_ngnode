@@ -7,8 +7,12 @@ before_script:
 - bower install
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
+before_deploy:
+- echo 'deploying...'
 deploy:
   provider: modulus
   api_key:
     secure: pupstvm20o8Mha/puFB6MPg5V+trTjay+1inDg2iuNYaOkHWoZ/NAuESBBFJFV19ErJ5xejMHkJLbUm65ltRbxLwnoofnSWYC6aWu0pel114fpDkWQPSt8RyDzuUd6E+AlXhz8YMAo8F4NcZh8tgLLfx4oeM/kQBcABneJmw3kg=
   project_name: metube
+after_deploy:
+- echo '...done!'
