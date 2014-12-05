@@ -11,4 +11,4 @@ deploy:
   provider: modulus
   api_key:
     secure: pupstvm20o8Mha/puFB6MPg5V+trTjay+1inDg2iuNYaOkHWoZ/NAuESBBFJFV19ErJ5xejMHkJLbUm65ltRbxLwnoofnSWYC6aWu0pel114fpDkWQPSt8RyDzuUd6E+AlXhz8YMAo8F4NcZh8tgLLfx4oeM/kQBcABneJmw3kg=
-  project: metube
+  project_name: metube
