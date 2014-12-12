@@ -1,3 +1,4 @@
+// frontend/blog/blogApi.service.js
 'use strict';
 
 angular.module('blog')
@@ -93,20 +94,30 @@ angular.module('blog')
 	
 	// TODO: return only the data required for showing an archive
 	function _getAllPosts() {
-		var deferred = $q.defer();
-		deferred.resolve(MOCKpostList);
-		return deferred.promise;
+		//var deferred = $q.defer();
+		//deferred.resolve(MOCKpostList);
+		//return deferred.promise;
+		return $http.get('/api/blog/posts');
 	}
 	function _getFilteredPosts() {
 		var deferred = $q.defer();
 		deferred.resolve([MOCKpostList[0]]);
 		return deferred.promise;
 	}
-	
 	function _getSpecificPost(postId) {
 		var deferred = $q.defer();
 		deferred.resolve(MOCKpostList[postId]);
 		return deferred.promise;
+	}
+	function _createNewPost(newPostData) {
+		//var deferred = $q.defer();
+		//newPostData.id = MOCKpostList.length;
+		//MOCKpostList.push(newPostData);
+		//console.log(newPostData);
+		//console.log(MOCKpostList.length);
+		//deferred.resolve(200);
+		//return deferred.promise;
+		return $http.post('/api/blog/posts', newPostData);
 	}
 	
 	// API definition
@@ -115,7 +126,7 @@ angular.module('blog')
 		getAllPosts: _getAllPosts,
 		getFilteredPosts: _getFilteredPosts,
 		getSpecificPost: _getSpecificPost,
-
+		createNewPost: _createNewPost,
 	};
 	
 }]);

@@ -31,9 +31,11 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'<%= project.app %>/frontend/metube.style.css' : '<%= project.app %>/frontend/metube.style.scss',
+					'<%= project.app %>/frontend/authentication/authentication.style.css' : '<%= project.app %>/frontend/authentication/authentication.style.scss',
 					'<%= project.app %>/frontend/blog/menu.style.css' : '<%= project.app %>/frontend/blog/menu.style.scss',
 					'<%= project.app %>/frontend/blog/view/view.style.css' : '<%= project.app %>/frontend/blog/view/view.style.scss',
 					'<%= project.app %>/frontend/blog/archive/archive.style.css' : '<%= project.app %>/frontend/blog/archive/archive.style.scss',
+					'<%= project.app %>/frontend/blog/newPost/newPost.style.css' : '<%= project.app %>/frontend/blog/newPost/newPost.style.scss',
 				}
 			}
 		},

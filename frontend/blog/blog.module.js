@@ -2,5 +2,6 @@
 
 angular.module('blog', [
 	'blogView',
-	'blogArchive'
+	'blogArchive',
+	'blogNewPost'
 ]);
