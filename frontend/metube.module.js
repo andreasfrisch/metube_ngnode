@@ -28,7 +28,8 @@ angular.module('metube', [
 		url: '/entry/:slug',
 		templateUrl: 'blog/view/view.html',
 		controller: 'blogView'
-	})
+	});
+	/*
 	.state('blog.create', {
 		url: '/create',
 		abstract: true,
@@ -49,5 +50,5 @@ angular.module('metube', [
 		templateUrl: 'blog/create/create.preview.html',
 		controller: 'blogCreatePreview'
 	});
-
+	*/
 }]);
