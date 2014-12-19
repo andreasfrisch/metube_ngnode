@@ -2,7 +2,6 @@
 
 angular.module('metube', [
 	'ui.router',
-	'authentication',
 	'blog'
 ])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
