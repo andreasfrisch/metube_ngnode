@@ -9,7 +9,7 @@
     "express": "~4.7.2",
     "method-override": "~2.1.2",
     "mongoose": "~3.6.2",
-    "morgan": "~1.2.2",
+    "morgan": "~1.2.2"
   },
   "devDependencies": {
     "connect-livereload": "^0.5.2",

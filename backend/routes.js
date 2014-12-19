@@ -22,7 +22,7 @@ module.exports = function(app) {
 			postedDate: request.body.postedDate,
 			tags: request.body.tags,
 			paragraphs: request.body.paragraphs
-		}, function(error, blogPost) {
+		}, function() {
 			BlogPostModel.find(function(error, blogPosts) {
 				if (error) {
 					response.send(error);
@@ -40,7 +40,7 @@ module.exports = function(app) {
 				}
 				response.json(blogPost);
 			}
-		)
+		);
 	});
 	
 	
