@@ -9,7 +9,6 @@
 
 	<!-- Load styling -->
 	<link rel="stylesheet" href="metube.style.css">
-	<link rel="stylesheet" href="authentication/authentication.style.css">
 	<link rel="stylesheet" href="blog/menu.style.css">
 	<link rel="stylesheet" href="blog/view/view.style.css">
 	<link rel="stylesheet" href="blog/archive/archive.style.css">
@@ -25,9 +24,6 @@
 
 	<!-- metube scripts -->
 	<script src="/metube.module.js"></script>
-	<script src="/authentication/authentication.module.js"></script>
-	<script src="/authentication/authenticationApi.service.js"></script>
-	<script src="/authentication/login.controller.js"></script>
 	<script src="/blog/blog.module.js"></script>
 	<script src="/blog/blogApi.service.js"></script>
 	<script src="/blog/archive/archive.module.js"></script>
@@ -37,7 +33,6 @@
 	<script src="/blog/view/paragraph.directive.js"></script>
 	<script src="/blog/create/create.module.js"></script>
 	<script src="/blog/create/create.service.js"></script>
-	<script src="/blog/create/create.frame.controller.js"></script>
 	<script src="/blog/create/create.content.controller.js"></script>
 	<script src="/blog/create/create.layout.controller.js"></script>
 	<script src="/blog/create/create.preview.controller.js"></script>
@@ -46,8 +41,6 @@
 
 </head>
 <body ng-app="metube">
-	<a ui-sref="login">Login</a>
-	<hr />
-	<div ui-view></div>
+	<ui-view />
 </body>
 </html>

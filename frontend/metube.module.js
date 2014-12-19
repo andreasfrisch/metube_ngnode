@@ -13,25 +13,6 @@ angular.module('metube', [
 		templateUrl: 'portal.html'
 	})
 	
-	// Authentication
-	.state('login', {
-		url: '/login',
-		templateUrl: 'authentication/login.html',
-		controller: 'login'
-	}) 
-	.state('signup', {
-		url: '/signup',
-		templateUrl: 'authentication/signup.html',
-		controller: 'signup'
-	})
-	/*
-	.state('logout', {
-		url: '/logout',
-		templateUrl: 'authentication/logout.html',
-		controller: 'logout'
-	})
-	*/ 
-	
 	// Blog
 	.state('blog', {
 		url: '/blog',
