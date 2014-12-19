@@ -3,5 +3,10 @@
 angular.module('blog', [
 	'blogView',
 	'blogArchive',
-	'blogNewPost'
+	'blogCreate'
+])
+.constant('paragraphTypes', [
+	'header',
+	'text',
+	'image'
 ]);

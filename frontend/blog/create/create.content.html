@@ -1,0 +1,33 @@
+<div class="blogCreateNavigationMenu">
+	<div class="leftAligned">
+		<button ng-click="goToPreview()">Preview</button>
+	</div>
+	<div class="centered">
+		<span>Edit Content</span>
+	</div>
+	<div class="rightAligned">
+		<button ng-click="goToLayout()">Layout</button>
+	</div>
+</div>
+<div class="blogCreateContent">
+	<form name="postDraftForm" novalidate>
+		<input type="text" id="title" ng-model="draft.title" placeholder="Title"></input>
+		<input type="text" id="author" ng-model="draft.author" placeholder="Author"></input>
+		<input type="text" id="date" ng-model="draft.postedDate" placeholder="The publishing date (e.g. 24/12-2014)"></input>
+		<input type="text" id="tags" ng-model="draft.tags" placeholder="Comma separated list of tags" tags-parser-and-formatter></input>
+		<textarea ng-model="draft.paragraphs" placeholder="Content" paragraphs-parser-and-formatter></textarea>
+	</form>
+	<!--
+	<p>Tags in model: {{ draft.tags }}</p>
+	<p>Paragraphs in model: {{ draft.paragraphs }}</p>
+	-->
+</div>
+<div class="blogCreateNavigationMenu">
+	<div class="leftAligned">
+	</div>
+	<div class="centered">
+		<button ng-click="submitPost()">Submit</button>
+	</div>
+	<div class="rightAligned">
+	</div>
+</div>

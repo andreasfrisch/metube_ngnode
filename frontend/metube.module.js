@@ -44,13 +44,29 @@ angular.module('metube', [
 		controller: 'blogArchive'
 	})
 	.state('blog.view', {
-		url: '/:postId',
+		url: '/entry/:slug',
 		templateUrl: 'blog/view/view.html',
 		controller: 'blogView'
 	})
-	.state('blog.newPost', {
-		url: '/newPost',
-		templateUrl: 'blog/newPost/newPost.html',
-		controller: 'blogNewPost'
+	.state('blog.create', {
+		url: '/create',
+		abstract: true,
+		templateUrl: 'blog/create/create.frame.html',
+	})
+	.state('blog.create.content', {
+		url: '/content',
+		templateUrl: 'blog/create/create.content.html',
+		controller: 'blogCreateContent'
+	})
+	.state('blog.create.layout', {
+		url: '/layout',
+		templateUrl: 'blog/create/create.layout.html',
+		controller: 'blogCreateLayout'
+	})
+	.state('blog.create.preview', {
+		url: '/preview',
+		templateUrl: 'blog/create/create.preview.html',
+		controller: 'blogCreatePreview'
 	});
+
 }]);

@@ -10,7 +10,7 @@ var morgan = require('morgan'); //log requests to console
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser'); // parses HTML POST body
 var methodOverride = require('method-override'); // simulate DELETE and PUT
-var dbConfig = require('backend/config/database');
+var dbConfig = require('./backend/config/database.js');
 /*
  * Configuration
  */
@@ -23,7 +23,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 mongoose.connect(dbConfig.url);
-var BlogPostModel = require('backend/models/blog.js');
+var BlogPostModel = require('./backend/models/blog');
 
 /*
  * Routing:
@@ -46,9 +46,11 @@ app.post('/api/blog/posts', function(request, response) {
 		tags: request.body.tags,
 		paragraphs: request.body.paragraphs
 	}, function(error, blogPost) {
-		if (error) {
-			response.send(error);
-		}
+		console.log(error);
+//		if (error) {
+//			response.send(error);
+//		}
+		console.log('Inserting blog: ', blogPost);
 		BlogPostModel.find(function(error, blogPosts) {
 			if (error) {
 				response.send(error);
@@ -57,9 +59,20 @@ app.post('/api/blog/posts', function(request, response) {
 		});
 	});
 });
+app.get('/api/blog/posts/:slug', function(request, response) {
+	BlogPostModel.findOne(
+		{'slug': request.params.slug},
+		function(error, blogPost) {
+			if (error) {
+				response.send(error);
+			}
+			response.json(blogPost);
+		}
+	)
+});
 
 // Load single-view file. Let Angular handle the rest
-app.get('*', function(request, response) {
+app.get('/', function(request, response) {
 	response.sendfile('frontend/metube.index.html');
 });
 

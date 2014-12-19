@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 					'<%= project.app %>/frontend/blog/menu.style.css' : '<%= project.app %>/frontend/blog/menu.style.scss',
 					'<%= project.app %>/frontend/blog/view/view.style.css' : '<%= project.app %>/frontend/blog/view/view.style.scss',
 					'<%= project.app %>/frontend/blog/archive/archive.style.css' : '<%= project.app %>/frontend/blog/archive/archive.style.scss',
-					'<%= project.app %>/frontend/blog/newPost/newPost.style.css' : '<%= project.app %>/frontend/blog/newPost/newPost.style.scss',
+					'<%= project.app %>/frontend/blog/create/create.style.css' : '<%= project.app %>/frontend/blog/create/create.style.scss',
 				}
 			}
 		},
@@ -73,7 +73,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-	    
+		
+		nodemon: {
+			dev: {
+				script: 'server.js'
+			}
+		},
+		
 		open: {
 			server: {
 				url: 'http://localhost:<%= express.all.options.port%>'
@@ -112,7 +118,15 @@ module.exports = function(grunt) {
 					livereload: true,
 				}
 			},
+			
 		},
+		
+		concurrent: {
+			options: {
+				logConcurrentOutput: true,
+			},
+			tasks: ['nodemon', 'open', 'watch']
+		}
 	
 		//TODO:
 		//concat
@@ -131,18 +145,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-express');
+	//grunt.loadNpmTasks('grunt-express');
+	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-bower-install');
 	grunt.loadNpmTasks('grunt-open');
+	grunt.loadNpmTasks('grunt-concurrent');
 	
 	
 	grunt.registerTask('serve', [
 		'bowerInstall:target',
 		'sass',
-		'express',
-		'open',
-		'watch'
+		'concurrent'
 	]);
 	grunt.registerTask('test', [
 		'jshint',

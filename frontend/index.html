@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="blog/menu.style.css">
 	<link rel="stylesheet" href="blog/view/view.style.css">
 	<link rel="stylesheet" href="blog/archive/archive.style.css">
-	<link rel="stylesheet" href="blog/newPost/newPost.style.css">
+	<link rel="stylesheet" href="blog/create/create.style.css">
 
 	<!-- Load logic -->
 	<!-- angular or third party scripts -->
@@ -35,8 +35,15 @@
 	<script src="/blog/view/view.module.js"></script>
 	<script src="/blog/view/view.controller.js"></script>
 	<script src="/blog/view/paragraph.directive.js"></script>
-	<script src="/blog/newPost/newPost.module.js"></script>
-	<script src="/blog/newPost/newPost.controller.js"></script>
+	<script src="/blog/create/create.module.js"></script>
+	<script src="/blog/create/create.service.js"></script>
+	<script src="/blog/create/create.frame.controller.js"></script>
+	<script src="/blog/create/create.content.controller.js"></script>
+	<script src="/blog/create/create.layout.controller.js"></script>
+	<script src="/blog/create/create.preview.controller.js"></script>
+	<script src="/blog/create/paragraphsParserAndFormatter.directive.js"></script>
+	<script src="/blog/create/tagsParserAndFormatter.directive.js"></script>
+
 </head>
 <body ng-app="metube">
 	<a ui-sref="login">Login</a>

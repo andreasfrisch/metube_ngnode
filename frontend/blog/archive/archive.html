@@ -32,7 +32,7 @@
 		</p>
 		
 		<div class="post" ng-repeat="post in posts | filter:archiveSearchFilter as filteredPosts">
-			<a ui-sref="blog.view({postId: post.id})">
+			<a ui-sref="blog.view({slug: post.slug})">
 				<p class="title">
 					{{ post.title }}
 				</p>

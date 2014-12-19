@@ -1,0 +1,140 @@
+.blogCreateNavigationMenu {
+	width: 800px;
+	margin: auto;
+	padding: 10px 0;
+	.leftAligned {
+		display: inline-block;
+		width: 33%;
+	}
+	.centered {
+		display: inline-block;
+		width: 33%;
+		text-align: center;
+	}
+	.rightAligned {
+		float: right;
+		display: inline-block;
+		width: 33%;
+		text-align: right;
+	}
+}
+
+.blogCreatePreview {
+	width: 800px;
+	margin: auto;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	.post {
+		hr {
+			width: 750px;
+		}
+		.title {
+			padding: 10px;
+			margin-bottom: 0px;
+			text-align: center;
+			font-size: 30px;
+		}
+		.metaData {
+			width: 750px;
+			margin: auto;
+			.postedDate {
+				text-align: left;
+				width: 250px;
+				margin: 0;
+				padding: 0;
+				display: inline-block;
+			}
+			.author {
+				text-align: center;
+				width: 250px;
+				margin: 0;
+				padding: 0;
+				display: inline-block;
+			}
+			.tags {
+				display: inline;
+				float: right;
+			}
+		}
+		.content {
+			min-height: 100px;
+			p {
+				margin: 0;
+				padding: 10px 25px;
+			}
+			.header {
+				font-weight: bold;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			.text {
+				text-align: justify;
+				text-justify: inter-word;
+				
+				&.firstParagraph p:first-child:first-letter {
+					float: left;
+					//color: #903;
+					font-size: 55px;
+					line-height: 50px;
+					padding-top: 4px;
+					padding-right: 8px;
+					padding-left: 3px;
+					font-family: Georgia;
+				}
+			}
+			.image {
+				text-align: center;
+				img {
+					max-width: 600px;
+				}
+				.caption {
+					margin: 0;
+					padding: 0;
+					font-size: 0.9em;
+				}
+			}
+		}
+	}
+}
+
+.blogCreateContent {
+	width: 800px;
+	margin: auto;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	form {
+		width: 800px;
+		input {
+			width: 700px;
+			line-height: 24px;
+			font-size: 16px;
+			margin: 10px 47px;
+		}
+		textarea {
+			width: 700px;
+			height: 600px;
+			margin: 10px 47px;
+			resize: none;
+			font-size: 14px;
+		}
+	}
+}
+
+.blogCreateLayout {
+	width: 800px;
+	min-height: 100px;
+	margin: auto;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	.paragraph {
+		width: 700px;
+		margin: 10px auto;
+		select {
+			width: 200px;
+		}
+	}
+	hr.divider {
+		width: 90%;
+		margin: auto;
+	}
+}

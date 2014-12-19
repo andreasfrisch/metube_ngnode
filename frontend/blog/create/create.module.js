@@ -1,4 +1,4 @@
 //newPost.module.js
 'use strict';
 
-angular.module('blogNewPost', []);
+angular.module('blogCreate', []);
