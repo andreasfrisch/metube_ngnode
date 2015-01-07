@@ -9,6 +9,7 @@
 
 	<!-- Load styling -->
 	<link rel="stylesheet" href="metube.style.css">
+	<link rel="stylesheet" href="authentication/authentication.style.css">
 	<link rel="stylesheet" href="blog/menu.style.css">
 	<link rel="stylesheet" href="blog/view/view.style.css">
 	<link rel="stylesheet" href="blog/archive/archive.style.css">
@@ -24,6 +25,10 @@
 
 	<!-- metube scripts -->
 	<script src="/metube.module.js"></script>
+	<script src="/authentication/authentication.module.js"></script>
+	<script src="/authentication/authenticationApi.service.js"></script>
+	<script src="/authentication/authenticationStatus.service.js"></script>
+	<script src="/authentication/authentication.controller.js"></script>
 	<script src="/blog/blog.module.js"></script>
 	<script src="/blog/blogApi.service.js"></script>
 	<script src="/blog/archive/archive.module.js"></script>
@@ -40,7 +45,20 @@
 	<script src="/blog/create/tagsParserAndFormatter.directive.js"></script>
 
 </head>
-<body ng-app="metube">
+<body ng-app="metube" ng-controller="authentication">
+	<div ng-if="!authenticationStatus.isAuthenticated">
+		<form name="loginForm" ng-submit="login(login.username, login.password)" novalidate>
+			<input type="text" ng-model="login.username" placeholder="username" required></input>
+			<br/>
+			<input type="password" ng-model="login.password" placeholder="password" required></input>
+			<br/>
+			<input type="submit" ng-disabled="loginForm.$invalid" value="Login"></input>
+		</form>
+	</div>
+	<div ng-if="authenticationStatus.isAuthenticated">
+		<button ng-click="logout()">Logout</button>
+	</div>
+	<hr />
 	<div ui-view></div>
 </body>
 </html>

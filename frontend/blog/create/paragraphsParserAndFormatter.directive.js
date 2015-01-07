@@ -20,7 +20,7 @@ angular.module('blogCreate')
 			ngModel.$formatters.push(function toView(input) {
 				//comma-join all tags
 				return (input || []).reduce(function(text, paragraph) {
-					console.log('PFormat: ', paragraph.content, ' and ', text);
+					//console.log('ParagraphParserAndFormatter: ', paragraph.content, ' and ', text);
 					return (text + '\n\n' + paragraph.content).trim();
 				}, '');
 			});

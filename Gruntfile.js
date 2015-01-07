@@ -31,6 +31,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'<%= project.app %>/frontend/metube.style.css' : '<%= project.app %>/frontend/metube.style.scss',
+					'<%= project.app %>/frontend/authentication/authentication.style.css' : '<%= project.app %>/frontend/authentication/authentication.style.scss',
 					'<%= project.app %>/frontend/blog/menu.style.css' : '<%= project.app %>/frontend/blog/menu.style.scss',
 					'<%= project.app %>/frontend/blog/view/view.style.css' : '<%= project.app %>/frontend/blog/view/view.style.scss',
 					'<%= project.app %>/frontend/blog/archive/archive.style.css' : '<%= project.app %>/frontend/blog/archive/archive.style.scss',
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
 					'Gruntfile.js',
 					'karma.conf.js',
 					'<%= project.app %>/backend/**/*.js',
-					'<%= project.app %>/frontend/{,blog/**,}/*.js',
+					'<%= project.app %>/frontend/{,blog/**,authentication/**}/*.js',
 				]
 			}
 		},
@@ -93,7 +94,7 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					'<%= project.app %>/frontend/metube.style.scss',
-					'<%= project.app %>/frontend/{,blog/**/}*.scss'
+					'<%= project.app %>/frontend/{,blog/**/,authentication/**}*.scss'
 				],
 				tasks: ['sass'],
 				options: {
@@ -102,7 +103,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= project.app %>/frontend/{,blog/**}/*.js',
+					'<%= project.app %>/frontend/{,blog/**,authentication/**}/*.js',
 				],
 				tasks: ['jshint', 'karma'],
 				options: {
@@ -111,7 +112,7 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [
-					'<%= project.app %>/frontend/{,blog/**}/*.html',
+					'<%= project.app %>/frontend/{,blog/**,authentication/**}/*.html',
 				],
 				options: {
 					livereload: true,

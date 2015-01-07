@@ -31,6 +31,7 @@ var blogPost = mongoose.Schema({
 //generate slug of blogPost before saving
 blogPost.pre('save', function (next) {
 	this.slug = slugify(this.title);
+	this.date = new Date(this.date);
 	next(); 
 });
 

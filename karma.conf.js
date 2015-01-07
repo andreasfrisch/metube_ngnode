@@ -24,12 +24,22 @@ module.exports = function(config) {
 			
 			'metube.module.js',
 			
+			'authentication/authentication.module.js',
+			'authentication/authenticationApi.service.js',
+			'authentication/authenticationStatus.service.js',
+			'authentication/authentication.controller.js',
+			
 			'blog/blog.module.js',
 			'blog/blogApi.service.js',
 			'blog/view/view.module.js',
 			'blog/view/view.controller.js',
 			'blog/archive/archive.module.js',
 			'blog/archive/archive.controller.js',
+			'blog/create/create.module.js',
+			'blog/create/create.service.js',
+			'blog/create/create.content.controller.js',
+			'blog/create/create.layout.controller.js',
+			'blog/create/create.preview.controller.js',
 					
 			/*
 			 * Test specs:
