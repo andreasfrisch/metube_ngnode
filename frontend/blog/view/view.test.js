@@ -13,6 +13,6 @@ describe('BlogView', function () {
 		
 		});
 		
-		it ('dummy test', function() {/*...*/});
+		//it ('dummy test', function() {/*...*/});
 	});
 });

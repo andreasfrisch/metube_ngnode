@@ -4,7 +4,7 @@ angular.module('authentication')
 .service('authenticationApi', ['$q', '$http', 'authenticationStatus', function($q, $http, authenticationStatus) {
 	return {
 		login: _login,
-		//register: _register,
+		register: _register,
 		logout: _logout,
 	};
 	
@@ -29,7 +29,7 @@ angular.module('authentication')
 		);
 		return deferred.promise;
 	}
-	/*
+	
 	function _register(username, password) {
 		console.log('authenticationApi > registration attempt..');
 		var deferred = $q.defer();
@@ -49,7 +49,7 @@ angular.module('authentication')
 		);
 		return deferred.promise;
 	}
-	*/
+	
 	function _logout() {
 		console.log('authenticationApi > logging out');
 		sessionStorage.removeItem('accessToken');

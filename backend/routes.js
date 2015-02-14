@@ -13,9 +13,6 @@ module.exports = function(app) {
 	/*
 	 * Authentication Routes
 	 */
-	/*
-	 * Removed to prevent further user registrations
-	 * Think of a better way to achieve this
 	app.post('/api/auth/register', function(request, response) {
 		console.log('backend > creating new user');
 		UserModel.findOne({
@@ -43,7 +40,7 @@ module.exports = function(app) {
 			}
 		});
 	});
-	*/
+
 	app.post('/api/auth/login', function(request, response) {
 		var username = request.body.username || '';
 		var password = request.body.password || '';

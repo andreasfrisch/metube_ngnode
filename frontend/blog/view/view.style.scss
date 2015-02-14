@@ -1,11 +1,22 @@
+$small_screen: "only screen and (max-width : 800px)";
+
 .blogView {
 	width: 800px;
+	@media #{$small_screen} {
+		width: 100%;
+	}
 	margin: auto;
 	background-color: #f8f8f8;
 	border: 1px solid #ccc;
+	@media #{$small_screen} {
+		border: none;
+	}
 	.post {
 		hr {
 			width: 750px;
+			@media #{$small_screen} {
+				width: 100%;
+			}
 		}
 		.title {
 			padding: 10px;
@@ -15,6 +26,9 @@
 		}
 		.metaData {
 			width: 750px;
+			@media #{$small_screen} {
+				width: 100%;
+			}
 			margin: auto;
 			.postedDate {
 				text-align: left;
@@ -22,6 +36,10 @@
 				margin: 0;
 				padding: 0;
 				display: inline-block;
+				@media #{$small_screen} {
+					width: 100%;
+					display: block;
+				}
 			}
 			.author {
 				text-align: center;
@@ -29,10 +47,20 @@
 				margin: 0;
 				padding: 0;
 				display: inline-block;
+				@media #{$small_screen} {
+					width: 100%;
+					display: block;
+					text-align: left;
+				}
 			}
 			.tags {
 				display: inline;
 				float: right;
+				@media #{$small_screen} {
+					width: 100%;
+					display: block;
+					text-align: left;
+				}
 			}
 		}
 		.content {
@@ -64,6 +92,9 @@
 				text-align: center;
 				img {
 					max-width: 600px;
+					@media #{$small_screen} {
+						max-width: 100%;
+					}
 				}
 				.caption {
 					margin: 0;

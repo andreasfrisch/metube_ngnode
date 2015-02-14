@@ -13,6 +13,7 @@ describe('BlogArchive', function () {
 		
 		});
 		
-		it ('dummy test', function() {/*...*/});
+		//it ('dummy test', function() {/*...*/});
+		
 	});
 });

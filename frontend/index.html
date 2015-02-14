@@ -10,10 +10,14 @@
 	<!-- Load styling -->
 	<link rel="stylesheet" href="metube.style.css">
 	<link rel="stylesheet" href="authentication/authentication.style.css">
+	
 	<link rel="stylesheet" href="blog/menu.style.css">
 	<link rel="stylesheet" href="blog/view/view.style.css">
 	<link rel="stylesheet" href="blog/archive/archive.style.css">
 	<link rel="stylesheet" href="blog/create/create.style.css">
+
+	<link rel="stylesheet" href="games/games.style.css">
+	<link rel="stylesheet" href="games/slidingCircuit/slidingCircuit.style.css">
 
 	<!-- Load logic -->
 	<!-- angular or third party scripts -->
@@ -24,11 +28,14 @@
 	<!-- endbower -->
 
 	<!-- metube scripts -->
+	<!-- authentication: -->
 	<script src="/metube.module.js"></script>
 	<script src="/authentication/authentication.module.js"></script>
 	<script src="/authentication/authenticationApi.service.js"></script>
 	<script src="/authentication/authenticationStatus.service.js"></script>
 	<script src="/authentication/authentication.controller.js"></script>
+	
+	<!-- blog: -->
 	<script src="/blog/blog.module.js"></script>
 	<script src="/blog/blogApi.service.js"></script>
 	<script src="/blog/archive/archive.module.js"></script>
@@ -44,6 +51,12 @@
 	<script src="/blog/create/paragraphsParserAndFormatter.directive.js"></script>
 	<script src="/blog/create/tagsParserAndFormatter.directive.js"></script>
 
+	<!-- games: -->
+	<script src="/games/games.module.js"></script>
+	<script src="/games/slidingCircuit/slidingCircuit.module.js"></script>
+	<script src="/games/slidingCircuit/slidingCircuit.service.js"></script>
+	<script src="/games/slidingCircuit/slidingCircuit.controller.js"></script>
+	<script src="/games/slidingCircuit/keypressEvents.directive.js"></script>
 </head>
 <body ng-app="metube" ng-controller="authentication">
 	<div ng-if="!authenticationStatus.isAuthenticated">

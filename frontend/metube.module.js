@@ -3,7 +3,8 @@
 angular.module('metube', [
 	'ui.router',
 	'authentication',
-	'blog'
+	'blog',
+	'games'
 ])
 .factory('tokenInterceptor', ['$q', 'authenticationStatus', function($q, authenticationStatus) {
 	return {
@@ -100,6 +101,19 @@ angular.module('metube', [
 		templateUrl: 'blog/create/create.preview.html',
 		controller: 'blogCreatePreview',
 		access: {requiresLogin: true}
+	})
+	
+	//games
+	.state('games', {
+		url: '/games',
+		templateUrl: 'games/menu.html',
+		access: {requiresLoginL: false}
+	})
+	.state('games.slidingCircuit', {
+		url: '/slidingCircuit',
+		templateUrl: 'games/slidingCircuit/slidingCircuit.html',
+		controller: 'slidingCircuit',
+		access: {requiresLogin: false}
 	});
 }])
 .run(['$rootScope', '$state', 'authenticationStatus', function($rootScope, $state, authenticationStatus) {

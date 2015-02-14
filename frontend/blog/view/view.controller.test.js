@@ -2,30 +2,54 @@
 'use strict';
 
 describe('BlogView', function () {
-	var mockBlogApi = {
-		getSpecificPost: function(postId) {
-			return {
-				id: postId,
-				//...
-			};
-		}
-	};
-	var $stateParams;
-	var scope;
+	beforeEach(module('metube'));
 	
-	beforeEach(module('metube'), function($provide) {
+	var $stateParams;
+	var $scope;
+	var mockBlogApi;
+	var controllerGenerator;
+
+	/*
+	beforeEach(module(function($provide) {
 		$provide.value('blogApi', mockBlogApi);
-	});
+	}));
+	*/
+
+	beforeEach(module(function($urlRouterProvider) {
+		//override default URL to prevent fetching
+		$urlRouterProvider.otherwise(function() {return false;});
+	}));
 
 	// Initialize the controller and a mock scope
-	beforeEach(inject(function($controller, _$rootScope_, _$stateParams_) {
+	beforeEach(inject(function($controller, $rootScope, _$stateParams_, $q) {
 		$stateParams = _$stateParams_;
-		scope = _$rootScope_;
+		$scope = $rootScope.$new();
 
-		$controller('blogView', {
-			'$scope': scope,
-			'$stateParams': $stateParams
-		});
+		mockBlogApi = {
+			getSpecificPost: function(postSlug) {
+				var deferred = $q.defer();
+				deferred.resolve(
+					postSlug
+					/*
+					{
+						id: 42,
+						slug: postSlug,
+					//...
+					}
+					*/
+				);
+				return deferred.promise;
+				//console.log(' >>> HUZZAH;', postSlug);
+			}
+		};
+
+		controllerGenerator = function() {
+			return $controller('blogView', {
+				'$scope': $scope,
+				'$stateParams': $stateParams,
+				'blogApi': mockBlogApi
+			});
+		};
 	}));
 	
 	/*
@@ -34,7 +58,11 @@ describe('BlogView', function () {
 	});
 	*/
 	
-	it ('should do something', function() {
-		//...
+	it ('should set a post object on scope', function() {
+		$stateParams.slug = 'test-test';
+		controllerGenerator();
+		$scope.$apply();
+		//..
 	});
+	
 });

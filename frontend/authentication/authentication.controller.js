@@ -18,7 +18,7 @@ angular.module('authentication')
 			}
 		);
 	};
-	/*
+	
 	$scope.register = function(username, password) {
 		console.log('loginController > registration attempt..');
 		authenticationApi.register(username, password)
@@ -31,7 +31,7 @@ angular.module('authentication')
 			}
 		);
 	};
-	*/
+
 	$scope.logout = function() {
 		console.log('loginCtrl > logging out..');
 		authenticationApi.logout();

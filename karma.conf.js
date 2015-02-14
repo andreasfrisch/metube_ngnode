@@ -40,7 +40,12 @@ module.exports = function(config) {
 			'blog/create/create.content.controller.js',
 			'blog/create/create.layout.controller.js',
 			'blog/create/create.preview.controller.js',
-					
+
+			'games/games.module.js',
+			'games/slidingCircuit/slidingCircuit.module.js',
+			'games/slidingCircuit/slidingCircuit.service.js',
+			'games/slidingCircuit/slidingCircuit.controller.js',
+
 			/*
 			 * Test specs:
 			 */

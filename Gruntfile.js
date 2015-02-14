@@ -36,6 +36,8 @@ module.exports = function(grunt) {
 					'<%= project.app %>/frontend/blog/view/view.style.css' : '<%= project.app %>/frontend/blog/view/view.style.scss',
 					'<%= project.app %>/frontend/blog/archive/archive.style.css' : '<%= project.app %>/frontend/blog/archive/archive.style.scss',
 					'<%= project.app %>/frontend/blog/create/create.style.css' : '<%= project.app %>/frontend/blog/create/create.style.scss',
+					'<%= project.app %>/frontend/games/games.style.css' : '<%= project.app %>/frontend/games/games.style.scss',
+					'<%= project.app %>/frontend/games/slidingCircuit/slidingCircuit.style.css' : '<%= project.app %>/frontend/games/slidingCircuit/slidingCircuit.style.scss',
 				}
 			}
 		},
@@ -94,7 +96,9 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					'<%= project.app %>/frontend/metube.style.scss',
-					'<%= project.app %>/frontend/{,blog/**/,authentication/**}*.scss'
+					'<%= project.app %>/frontend/authentication/**/*.scss',
+					'<%= project.app %>/frontend/blog/**/*.scss',
+					'<%= project.app %>/frontend/games/**/*.scss'
 				],
 				tasks: ['sass'],
 				options: {
