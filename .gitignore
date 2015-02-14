@@ -1,5 +1,6 @@
 *.css
 *.css.map
+*.log
 .sass-cache
 node_modules
 frontend/_libs_/
