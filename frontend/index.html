@@ -8,6 +8,8 @@
 	<title>Metube (WIP)</title>
 
 	<!-- Load styling -->
+	<link rel="stylesheet" href="_libs_/bootstrap/dist/css/bootstrap.min.css">
+	
 	<link rel="stylesheet" href="metube.style.css">
 	<link rel="stylesheet" href="authentication/authentication.style.css">
 	
@@ -22,14 +24,22 @@
 	<!-- Load logic -->
 	<!-- angular or third party scripts -->
 	<!-- bower:js -->
+	<script src="_libs_/jquery/dist/jquery.js"></script>
 	<script src="_libs_/angular/angular.js"></script>
 	<script src="_libs_/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="_libs_/angular-mocks/angular-mocks.js"></script>
+	<script src="_libs_/bootstrap/dist/js/bootstrap.js"></script>
 	<!-- endbower -->
 
 	<!-- metube scripts -->
-	<!-- authentication: -->
 	<script src="/metube.module.js"></script>
+	
+	<!-- common directives: -->
+	<script src="/menu/menu.module.js"></script>
+	<script src="/menu/menu.service.js"></script>
+	<script src="/menu/menu.controller.js"></script>
+	
+	<!-- authentication: -->
 	<script src="/authentication/authentication.module.js"></script>
 	<script src="/authentication/authenticationApi.service.js"></script>
 	<script src="/authentication/authenticationStatus.service.js"></script>
@@ -38,6 +48,7 @@
 	<!-- blog: -->
 	<script src="/blog/blog.module.js"></script>
 	<script src="/blog/blogApi.service.js"></script>
+	<script src="/blog/blogMenu.controller.js"></script>
 	<script src="/blog/archive/archive.module.js"></script>
 	<script src="/blog/archive/archive.controller.js"></script>
 	<script src="/blog/view/view.module.js"></script>
@@ -58,7 +69,8 @@
 	<script src="/games/slidingCircuit/slidingCircuit.controller.js"></script>
 	<script src="/games/slidingCircuit/keypressEvents.directive.js"></script>
 </head>
-<body ng-app="metube" ng-controller="authentication">
+<body ng-app="metube" ng-controller="menu">
+	<!--
 	<div ng-if="!authenticationStatus.isAuthenticated">
 		<form name="loginForm" ng-submit="login(login.username, login.password)" novalidate>
 			<input type="text" ng-model="login.username" placeholder="username" required></input>
@@ -68,10 +80,49 @@
 			<input type="submit" ng-disabled="loginForm.$invalid" value="Login"></input>
 		</form>
 	</div>
+
 	<div ng-if="authenticationStatus.isAuthenticated">
 		<button ng-click="logout()">Logout</button>
 	</div>
 	<hr />
-	<div ui-view></div>
+	-->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+    	<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Metube</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li ng-repeat="link in menuLinks" ng-class="{active: isActive(link.stateRoot || link.state)}">
+							<a ui-sref={{link.state}}>
+								{{link.title}} <span class="sr-only">(current)</span>
+							</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-if="!authenticationStatus.isAuthenticated">
+						<a ui-sref="login">Login</a>
+					</li>
+					<li ng-if="authenticationStatus.isAuthenticated">
+						<a ng-click="logout()">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div ui-view>
+			<!-- being filled in by angular -->
+		</div>
+	</div>
 </body>
 </html>

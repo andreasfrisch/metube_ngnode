@@ -1,76 +1,41 @@
-$small_screen: "only screen and (max-width : 800px)";
-
 .blogView {
-	width: 800px;
-	@media #{$small_screen} {
-		width: 100%;
-	}
 	margin: auto;
 	background-color: #f8f8f8;
 	border: 1px solid #ccc;
-	@media #{$small_screen} {
-		border: none;
-	}
+	padding: 25px;
 	.post {
 		hr {
-			width: 750px;
-			@media #{$small_screen} {
-				width: 100%;
-			}
+			margin: 10px 0;
 		}
 		.title {
-			padding: 10px;
-			margin-bottom: 0px;
-			text-align: center;
 			font-size: 30px;
 		}
 		.metaData {
-			width: 750px;
-			@media #{$small_screen} {
-				width: 100%;
-			}
 			margin: auto;
 			.postedDate {
 				text-align: left;
-				width: 250px;
 				margin: 0;
 				padding: 0;
 				display: inline-block;
-				@media #{$small_screen} {
-					width: 100%;
-					display: block;
-				}
 			}
 			.author {
 				text-align: center;
-				width: 250px;
 				margin: 0;
 				padding: 0;
 				display: inline-block;
-				@media #{$small_screen} {
-					width: 100%;
-					display: block;
-					text-align: left;
-				}
 			}
 			.tags {
 				display: inline;
 				float: right;
-				@media #{$small_screen} {
-					width: 100%;
-					display: block;
-					text-align: left;
-				}
 			}
 		}
 		.content {
 			p {
 				margin: 0;
-				padding: 10px 25px;
+				padding: 10px 0;
 			}
 			.header {
 				font-weight: bold;
-				text-align: center;
 				font-size: 1.2em;
 			}
 			.text {
@@ -91,10 +56,7 @@ $small_screen: "only screen and (max-width : 800px)";
 			.image {
 				text-align: center;
 				img {
-					max-width: 600px;
-					@media #{$small_screen} {
-						max-width: 100%;
-					}
+					max-width: 100%;
 				}
 				.caption {
 					margin: 0;

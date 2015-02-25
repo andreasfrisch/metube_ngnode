@@ -1,13 +1,10 @@
 .blogArchive {
-	width: 800px;
 	margin: auto;
 	margin-bottom: 20px;
 	background-color: #f8f8f8;
 	border: 1px solid #ccc;
+	padding: 25px;
 	.archiveContent {
-		width: 750px;
-		margin: auto;
-		
 		.titleBar {
 			margin: 10px 0;
 			
@@ -19,7 +16,6 @@
 				float: right;
 				.searchBar {
 					vertical-align: top;
-					width: 200px;
 					line-height: 30px;
 					font-size:14px;
 				}
@@ -32,7 +28,10 @@
 					cursor: pointer;
 				}
 			}
-		}	
+		}
+		hr {
+			margin: 10px 0;
+		}
 		a {
 			color: #000;
 		}

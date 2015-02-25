@@ -4,7 +4,8 @@
   "dependencies": {
     "angular": ">=1.3",
     "angular-ui-router": "~0.2.11",
-    "angular-mocks": "~1.3.3"
+    "angular-mocks": "~1.3.3",
+    "bootstrap": "~3.3.2"
   },
   "appPath": "frontend"
 }
