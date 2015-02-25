@@ -11,7 +11,7 @@ angular.module('authentication')
 		.then(
 			function(userData) {
 				console.log('loginController > login successful: ', userData);
-				//$state.go('portal');
+				$state.go('portal');
 			},
 			function(error) {
 				console.log('loginController > login failed: ', error);
@@ -36,6 +36,6 @@ angular.module('authentication')
 		console.log('loginCtrl > logging out..');
 		authenticationApi.logout();
 		console.log('loginCtrl > ..done!');
-		//$state.go('portal');
+		$state.go('portal');
 	};
 }]);

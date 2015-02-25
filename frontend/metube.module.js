@@ -2,6 +2,7 @@
 
 angular.module('metube', [
 	'ui.router',
+	'menu',
 	'authentication',
 	'blog',
 	'games'
@@ -62,8 +63,9 @@ angular.module('metube', [
 	// Blog
 	.state('blog', {
 		url: '/blog',
-		abstract: true,
-		templateUrl: 'blog/menu.html',
+		//abstract: true,
+		template: '<div ui-view></div>', //'blog/menu.html',
+		controller: 'blogMenu',
 		access: {requiresLogin: false}	
 	})
 	.state('blog.archive', {
