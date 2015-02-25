@@ -5,3 +5,4 @@
 node_modules
 frontend/_libs_/
 frontend/coverage/
+backend/config/database.js
